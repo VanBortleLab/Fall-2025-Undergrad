@@ -1,12 +1,4 @@
----
 title: "MCB290: Codon Frequency Analysis"
-output: 
-  html_document: 
-    toc: true
-    toc_float: true
----
-
-
 
 ## Section 1. Retrieve Coding Sequence Information (Annotation)
 
