@@ -6,14 +6,12 @@ output:
     toc_float: true
 ---
 
-------------------------------------------------------------------------
+
 
 ## Section 1. Retrieve Coding Sequence Information (Annotation)
 
-------------------------------------------------------------------------
 
 
-```{r code_chunk_title1}
 codon_table <- c(
   TTT="Phe", TTC="Phe", TTA="Leu", TTG="Leu",
   CTT="Leu", CTC="Leu", CTA="Leu", CTG="Leu",
@@ -44,16 +42,11 @@ codon_table <- c(
 
 cds = readRDS(url("https://github.com/kvbortle/MCB290_VanBortleLab_Undergraduate_Projects/raw/refs/heads/main/data/Ensemblv115.CDS.RDS"))
 
-```
 
-------------------------------------------------------------------------
 
 ## Section 2. Break up CDS into Individual Codons 
 
-------------------------------------------------------------------------
 
-
-```{r code_chunk_title2}
 
 #CDS is similar to a human dictionary. It's the overall sequences of codons that we need to filter
 
@@ -167,17 +160,11 @@ Correcting_CDS = function(seq) {
 #so the the /3 was true, so we go to the next statement ATG
 #since ATG was then right, we go to the ending codon and we finish with curly brackets.
 
-```
 
-
-------------------------------------------------------------------------
 
 ## Section 3. Determine Codon Frequency (%)
 
-------------------------------------------------------------------------
 
-
-```{r code_chunk_title3}
 #next, connect our command with the CDS
 
 validCDS = sapply(cds_seqs, Correcting_CDS)
@@ -212,17 +199,12 @@ ALLcodons = unlist(lapply(CleanCDS, function(s) {
 
 
 #we need ot get the codon frequencies to see which amino acids show up with those codons 
-```
 
 
-------------------------------------------------------------------------
 
 ## Section 4. Plot Codon Frequency (%) Patterns
 
-------------------------------------------------------------------------
 
-
-```{r code_chunk_title4}
 codon_counts = table(ALLcodons)
 codon_counts = sort(codon_counts, decreasing = TRUE)
 print(codon_counts)
@@ -238,17 +220,10 @@ las = 2,       # Rotate x-axis labels vertically so it can be readable
 cex.names = .4)  # Make labels smaller to fit
 
 
-```
 
-
-------------------------------------------------------------------------
 
 ## Section 5. Plot Amino Acid Fequency (%) Patterns
 
-------------------------------------------------------------------------
-
-
-```{r code_chunk_title4}
 
 #NOW THE AMINO ACIDS
 
@@ -273,17 +248,14 @@ cex.names = .7)
 #after that it finally worked
 
 #Leucine is the most common amino acid!
-```
 
-------------------------------------------------------------------------
+
 
 ## Section 6. Summary / Conclusions and Calculate Relative Synonymous Codon Usage
 (RSCU)
 
-------------------------------------------------------------------------
 
 
-```{r code_chunk_title5}
 
 
 #so we know how each amino acid uses different codons
@@ -384,6 +356,5 @@ mtext("Relative Synonymous Codon Usage (RSCU) per Amino Acid",
 #in our results, we can see which codons get more preference in the amino acids!
 #very cool
 
-```
 
 
