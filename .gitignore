@@ -47,3 +47,5 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+Homo_sapiens.GRCh38.cds.all.fa
+Homo_sapiens_GRCh38_cds.rds
